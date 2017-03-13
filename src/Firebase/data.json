@@ -1,5 +1,14 @@
 {
-    "Messages": {
-
+    "Message": {
+        "TestMessage1": {
+            "sender": "Test User 1",
+            "sentTime": 1489422644533,
+            "message": "Hello brave world!"
+        },
+        "TestMessage2": {
+            "sender": "Test User 2",
+            "sentTime": 1489422644535,
+            "message": "Hello back!"
+        }
     }
 }
