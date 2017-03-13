@@ -5,7 +5,7 @@ I bid ye welcome to the Colonial Messaging Service! We shall be utilizing React,
 ## Setting Up Thine Development Machine
 
 - Clone repo
-- `npm install -i`
+- `npm install`
 
 ## Created With React-Create-App
 
