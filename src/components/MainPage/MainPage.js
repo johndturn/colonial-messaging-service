@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import TopBar from '../TopBar/TopBar'
 import InfoCard from '../InfoCard/InfoCard'
 import LoginCard from '../LoginCard/LoginCard'
+import InputCard from '../InputCard/InputCard'
 import MessageBox from '../MessageBox/MessageBox'
 
 import './MainPage.css'
@@ -31,6 +32,7 @@ class MainPage extends Component {
       <div className="MainPage-authenticated-content">
         <InfoCard name={this.state.name} />
         <MessageBox />
+        <InputCard />
       </div>
     )
   }

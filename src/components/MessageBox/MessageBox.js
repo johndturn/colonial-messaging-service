@@ -13,6 +13,10 @@ class MessageBox extends Component {
     }
   }
 
+  componentDidMount() {
+    // TODO: Retrieve the messages!)
+  }
+
   render() {
     return (
       <Paper className="MessageBox">
