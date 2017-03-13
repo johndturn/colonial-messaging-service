@@ -2,6 +2,11 @@
 
 I bid ye welcome to the Colonial Messaging Service! We shall be utilizing React, paired with Firebase in this endevour, and you are most welcome to join in the hacking henceforth.
 
+## Setting Up Thine Development Machine
+
+- Clone repo
+- `npm install -i`
+
 ## Created With React-Create-App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
