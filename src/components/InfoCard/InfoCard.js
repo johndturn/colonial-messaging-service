@@ -1,26 +1,25 @@
+import React from 'react'
 import moment from 'moment'
-import React, { Component } from 'react'
 
-import { Card } from 'material-ui/Card'
+import Paper from 'material-ui/Paper'
 
-class NewComponent extends Component {
-  constructor() {
-    super()
+import './InfoCard.css'
 
-    this.state = {
-      name: ''
-    }
-  }
+const InfoCard = (props) => (
+  <Paper className="InfoCard">
+    <div className="InfoCard-name">
+      <h3 className="InfoCard-titles">Thou art:</h3>
+      <h3 className="InfoCard-text">{props.name}</h3>
+    </div>
+    <div className="InfoCard-time">
+      <h3 className="InfoCard-titles">Thou didst begin sending messages at:</h3>
+      <h3 className="InfoCard-text">{moment(new Date()).format('dddd, MMMM Do YYYY, h:mm:ss a')}</h3>
+    </div>
+  </Paper>
+)
 
-  render() {
-    return (
-      <Card>
-        <div className="InfoCard-name"></div>
-        <div className="InfoCard-time"></div>
-        <div className="InfoCard-name"></div>
-      </Card>
-    )
-  }
+InfoCard.propTypes = {
+  name: React.PropTypes.string.isRequired
 }
 
-export default NewComponent
+export default InfoCard

@@ -11,7 +11,7 @@ class MainPage extends Component {
     super()
 
     this.state = {
-      name: null
+      name: 'John'
     }
 
     this.setName = this.setName.bind(this)
@@ -27,7 +27,7 @@ class MainPage extends Component {
 
   renderApplication() {
     return (
-      <InfoCard />
+      <InfoCard name={this.state.name} />
     )
   }
 

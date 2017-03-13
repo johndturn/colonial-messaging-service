@@ -26,7 +26,7 @@ class LoginCard extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.setName(this.state.Name)
+    this.props.setName(this.state.name)
   }
 
   render() {
@@ -42,7 +42,7 @@ class LoginCard extends Component {
           <br />
           <FlatButton
             style={{'marginTop': '20px'}}
-            onTouchTap={(e) => { e.preventDefault(); this.props.setName(this.state.Name) }}
+            onTouchTap={(e) => { e.preventDefault(); this.props.setName(this.state.name) }}
             secondary={true}
             label="Enter" />
         </form>
