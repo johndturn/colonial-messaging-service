@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import TopBar from '../TopBar/TopBar'
 import InfoCard from '../InfoCard/InfoCard'
 import LoginCard from '../LoginCard/LoginCard'
+import MessageBox from '../MessageBox/MessageBox'
 
 import './MainPage.css'
 
@@ -11,7 +12,7 @@ class MainPage extends Component {
     super()
 
     this.state = {
-      name: 'John'
+      name: ''
     }
 
     this.setName = this.setName.bind(this)
@@ -27,7 +28,10 @@ class MainPage extends Component {
 
   renderApplication() {
     return (
-      <InfoCard name={this.state.name} />
+      <div className="MainPage-authenticated-content">
+        <InfoCard name={this.state.name} />
+        <MessageBox />
+      </div>
     )
   }
 
