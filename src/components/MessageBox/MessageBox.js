@@ -14,10 +14,20 @@ class MessageBox extends Component {
   }
 
   componentDidMount() {
-    // TODO: Retrieve the messages!)
+    // TODO: Retrieve the messages!
   }
 
   render() {
+    let messages = []
+
+    for (let key in this.state.messages) {
+      if (this.state.messages.hasOwnProperty(key)) {
+        // Prepare messages
+      }
+    }
+
+    messages = messages.sort((a, b) => a.sentTime > b.sentTime ? -1 : 1)
+
     return (
       <Paper className="MessageBox">
         <h2>Correspondence</h2>

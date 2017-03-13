@@ -32,7 +32,7 @@ class MainPage extends Component {
       <div className="MainPage-authenticated-content">
         <InfoCard name={this.state.name} />
         <MessageBox />
-        <InputCard />
+        <InputCard name={this.state.name} />
       </div>
     )
   }
