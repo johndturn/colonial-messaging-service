@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 import React, { Component } from 'react'
 
 import Paper from 'material-ui/Paper'
@@ -11,10 +12,19 @@ class MessageBox extends Component {
     this.state = {
       messages: {}
     }
+
+    this.ref = firebase.database().ref().child('Message')
+    this.updateMessages = this.updateMessages.bind(this)
   }
 
   componentDidMount() {
-    // TODO: Retrieve the messages!
+    this.ref.on('value', (snapshot) => {
+      this.updateMessages(snapshot)
+    })
+  }
+
+  updateMessages(snapshot) {
+
   }
 
   render() {

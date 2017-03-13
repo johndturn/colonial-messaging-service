@@ -10,15 +10,15 @@ import MainPage from './components/MainPage/MainPage'
 import './styles/index.css'
 
 // Initialize Firebase:
-// const config = {
-//     apiKey: "",
-//     authDomain: "",
-//     databaseURL: "",
-//     storageBucket: "",
-//     messagingSenderId: ""
-//   }
-//
-// firebase.initializeApp(config)
+const config = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+}
+
+firebase.initializeApp(config)
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
