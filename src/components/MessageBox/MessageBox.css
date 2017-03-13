@@ -1,0 +1,48 @@
+.MessageBox {
+  width: 90%;
+  margin: 10px;
+  min-width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.MessageBox > h2 {
+  text-align: center;
+}
+
+.MessageBox-messages {
+  border: 1px solid rgb(204, 204, 204);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border-radius: 5px;
+  height: 500px;
+}
+
+.MessageBox-messages ul {
+  list-style: none;
+  padding: 5px 0 5px 15px;
+  width: 98%;
+  overflow-y: scroll;
+}
+
+.MessageBox-messages li {
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0 0;
+}
+
+.MessageBox-messages li > em {
+  font-size: .75em;
+}
+
+.MessageBox-messages li > b {
+  font-family: 'Tangerine', cursive;
+  font-size: 1.85em;
+}

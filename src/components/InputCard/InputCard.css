@@ -1,0 +1,17 @@
+.InputCard {
+  width: 90%;
+  margin: 10px;
+  min-width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.InputCard-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,24 @@
+.InfoCard {
+  width: 90%;
+  margin: 10px;
+  min-width: 300px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.InfoCard-name, .InfoCard-time {
+  text-align: center;
+}
+
+.InfoCard-titles {
+  font-weight: 300;
+  margin: 0;
+}
+
+.InfoCard-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+}
