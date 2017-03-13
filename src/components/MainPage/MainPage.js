@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-
 import TopBar from '../TopBar/TopBar'
+import InfoCard from '../InfoCard/InfoCard'
+import LoginCard from '../LoginCard/LoginCard'
 
 import './MainPage.css'
 
@@ -11,10 +11,12 @@ class MainPage extends Component {
     super()
 
     this.state = {
-      name: ''
+      name: null
     }
 
     this.setName = this.setName.bind(this)
+    this.renderLogin = this.renderLogin.bind(this)
+    this.renderApplication = this.renderApplication.bind(this)
   }
 
   setName(name) {
@@ -23,12 +25,25 @@ class MainPage extends Component {
     })
   }
 
+  renderApplication() {
+    return (
+      <InfoCard />
+    )
+  }
+
+  renderLogin() {
+    return (
+      <LoginCard setName={this.setName} />
+    )
+  }
+
   render() {
     return (
       <div className="MainPage">
-        <MuiThemeProvider>
-          <TopBar />
-        </MuiThemeProvider>
+        <TopBar />
+        <div className="MainPage-main-content">
+          { this.state.name ? this.renderApplication() : this.renderLogin() }
+        </div>
       </div>
     )
   }

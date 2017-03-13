@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+
 import MainPage from './components/MainPage/MainPage'
 
 import './styles/index.css'
@@ -11,6 +13,6 @@ import './styles/index.css'
 injectTapEventPlugin()
 
 ReactDOM.render(
-  <MainPage />,
+  <MuiThemeProvider><MainPage /></MuiThemeProvider>,
   document.getElementById('root')
 )

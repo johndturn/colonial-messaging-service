@@ -1,11 +1,10 @@
-.MainPage {
-
-}
-
-.MainPage-main-content {
+.LoginCard {
+  width: 90%;
+  text-align: center;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  padding: 10px;
 }
