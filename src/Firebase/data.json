@@ -1,14 +1,59 @@
 {
     "Message": {
         "TestMessage1": {
-            "sender": "Test User 1",
+            "sender": "TestUser1",
             "sentTime": 1489422644533,
             "message": "Hello brave world!"
         },
         "TestMessage2": {
-            "sender": "Test User 2",
+            "sender": "TestUser2",
             "sentTime": 1489422644535,
             "message": "Hello back!"
+        },
+        "TestMessage3": {
+            "sender": "TestUser3",
+            "sentTime": 1489422644541,
+            "message": "Hi Stephen!"
+        },
+        "TestMessage4": {
+            "sender": "TestUser2",
+            "sentTime": 1489422644543,
+            "message": "What're you up to, John?"
+        },
+        "TestMessage5": {
+            "sender": "TestUser4",
+            "sentTime": 1489422644547,
+            "message": "Good afternoon, Dr. Anderson. I love coding frenzys."
+        },
+        "TestMessage6": {
+            "sender": "TestUser1",
+            "sentTime": 1489422644550,
+            "message": "Just thinking about Colonial Stuff!"
+        }
+    },
+    "User": {
+        "TestUser1": {
+            "name": "John Turner"
+        },
+        "TestUser2": {
+            "name": "Gove Allen"
+        },
+        "TestUser3": {
+            "name": "Greg Anderson"
+        },
+        "TestUser4": {
+            "name": "Stephen Liddle"
+        }
+    },
+    "Thread": {
+        "TestThread1": {
+
+        },
+        "TestThread2": {
+
+        },
+        "TestThread3": {
+
         }
     }
 }
