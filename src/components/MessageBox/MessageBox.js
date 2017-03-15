@@ -1,3 +1,4 @@
+import moment from 'moment'
 import firebase from 'firebase'
 import React, { Component } from 'react'
 
@@ -10,7 +11,7 @@ class MessageBox extends Component {
     super()
 
     this.state = {
-      messages: {}
+      messages: []
     }
 
     this.ref = firebase.database().ref().child('Message')
@@ -18,35 +19,40 @@ class MessageBox extends Component {
   }
 
   componentDidMount() {
-    this.ref.on('value', (snapshot) => {
-      this.updateMessages(snapshot)
-    })
+    this.ref.on('value', this.updateMessages)
+  }
+
+  componentWillUnmount() {
+    this.ref.off('value', this.updateMessages)
   }
 
   updateMessages(snapshot) {
-
-  }
-
-  render() {
+    console.log(snapshot.val())
     let messages = []
-
-    for (let key in this.state.messages) {
-      if (this.state.messages.hasOwnProperty(key)) {
-        // Prepare messages
+    const messagesObj = snapshot.val()
+    for (let key in messagesObj) {
+      if (messagesObj.hasOwnProperty(key)) {
+        messages.push(messagesObj[key])
       }
     }
 
-    messages = messages.sort((a, b) => a.sentTime > b.sentTime ? -1 : 1)
+    messages = messages.sort((a, b) => a.sentTime < b.sentTime ? -1 : 1)
 
+    this.setState({ messages })
+  }
+
+  render() {
     return (
       <Paper className="MessageBox">
         <h2>Correspondence</h2>
         <div className="MessageBox-messages">
           <ul>
-            <li>
-              <em>12/1/2016 1:00 PM&nbsp;&nbsp;&nbsp;&nbsp;</em>
-              <b>john: </b>Good morn to thee!
-            </li>
+            {this.state.messages.map((message, i) => (
+              <li key={i}>
+                <em>{moment(message.sentTime).format('M/d/YYYY h:m A')}&nbsp;&nbsp;&nbsp;&nbsp;</em>
+                <b>{message.sender}: </b>{message.message}
+              </li>
+            ))}
           </ul>
         </div>
       </Paper>
