@@ -13,7 +13,7 @@ class MainPage extends Component {
     super()
 
     this.state = {
-      name: ''
+      name: 'John'
     }
 
     this.setName = this.setName.bind(this)
