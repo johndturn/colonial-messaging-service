@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 import React, { Component } from 'react'
 
 import Paper from 'material-ui/Paper'
@@ -11,7 +12,9 @@ class LoginCard extends Component {
     super()
 
     this.state = {
-      name: ''
+      email: '',
+      password: '',
+      error: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,23 +29,66 @@ class LoginCard extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.setName(this.state.name)
+    if (!this.state.email || !this.state.password) {
+      this.setState({
+        error: 'Please enter both an email and password!'
+      })
+    } else {
+      this.setState({ error: '' })
+      const email = this.state.email
+      const password = this.state.password
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((fireUser) => {
+        const uid = fireUser.uid
+        firebase.database().ref().child('User').child(uid)
+        .once('value').then((snapshot) => {
+          if (snapshot && snapshot.val()) {
+            const user = snapshot.val()
+            this.props.setUser(user)
+          } else {
+            this.setState({
+              error: 'No users node in the database!'
+            })
+          }
+        }).catch((error) => {
+          this.setState({
+            error: error.message,
+            password: ''
+          })
+        })
+      })
+      .catch((error) => {
+        this.setState({
+          error: error.message,
+          password: ''
+        })
+      })
+    }
   }
 
   render() {
     return (
       <Paper className="LoginCard">
         <h1>Who Art Thou?</h1>
+        { this.state.error && <h4 className="error">{this.state.error}</h4> }
         <form onSubmit={this.handleSubmit}>
           <TextField
-            name="name"
-            value={this.state.name}
+            name="email"
+            value={this.state.email}
             onChange={this.handleTextChange}
-            floatingLabelText="Name" />
+            floatingLabelText="Email" />
+          <br />
+          <TextField
+            name="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.handleTextChange}
+            floatingLabelText="Password" />
           <br />
           <FlatButton
             style={{'marginTop': '20px'}}
-            onTouchTap={(e) => { e.preventDefault(); this.props.setName(this.state.name) }}
+            onTouchTap={this.handleSubmit}
             secondary={true}
             label="Enter" />
         </form>
@@ -52,7 +98,7 @@ class LoginCard extends Component {
 }
 
 LoginCard.propTypes = {
-  setName: React.PropTypes.func.isRequired
+  setUser: React.PropTypes.func.isRequired
 }
 
 export default LoginCard
