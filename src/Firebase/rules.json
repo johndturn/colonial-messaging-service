@@ -1,0 +1,35 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "false",
+    "Message": {
+      ".write": "root.child('User/' + auth.uid).exists()",
+      "$messageId": {
+        ".validate": "newData.child('sender').exists() && newData.child('sentTime').exists() && newData.child('message').exists()",
+        "sender": {
+          ".validate": "newData.isString()"
+        },
+        "sentTime": {
+          ".validate": "newData.isNumber()"
+        },
+        "message": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    "User": {
+      ".read": "root.child('Group/Admin/' + auth.uid).exists()",
+      ".write": "auth != null",
+  		"$uid": {
+        ".write": "$uid === auth.uid && newData.child('name').exists() && newData.child('email').exists() && newData.child('uid').exists()",
+        ".read": "$uid === auth.uid"
+      }
+    },
+    "$other": {
+        ".validate": "false"
+    }
+  }
+}
