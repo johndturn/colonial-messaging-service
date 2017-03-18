@@ -27,7 +27,6 @@ class MessageBox extends Component {
   }
 
   updateMessages(snapshot) {
-    console.log(snapshot.val())
     let messages = []
     const messagesObj = snapshot.val()
     for (let key in messagesObj) {

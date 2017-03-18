@@ -1,11 +1,19 @@
 # Colonial Messaging Service
 
-I bid ye welcome to the Colonial Messaging Service! We shall be utilizing React, paired with Firebase in this endevour, and you are most welcome to join in the hacking henceforth.
+This is the example project created by John Turner for the Advanced Database class for BYU's IS566 course. The application is a basic chatroom built on React with Firebase as the backend. The idea behind this project is to teach the basics of using Firebase, using React as an example framework.
 
 ## Setting Up Thine Development Machine
 
 - Clone repo
 - `npm install`
+
+## Misc. Notes
+
+You'll notice several long-running branches in this repo, including `class-1`, `class-2`, & `class-3`. These branches represent the state of the application at the end of each class period that we worked on the project.
+
+The `master` branch has the final code from `class-3` (or future classes if they happen) merged in.
+
+**Note**: I recognize that you might see some Firebase API connection information here (like Key, Secret, URL...). This was the information used in the class period. I've since deleted the Firebase associated with that information. 
 
 ## Created With React-Create-App
 
