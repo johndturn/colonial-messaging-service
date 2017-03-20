@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 import React, { Component } from 'react'
 
 import Paper from 'material-ui/Paper'
@@ -15,14 +16,25 @@ class InputCard extends Component {
       newMessage: ''
     }
 
+    this.ref = firebase.database().ref().child('Message')
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    // TODO: Send new message!
-    console.log('Send this message!')
+    if (this.state.newMessage) {
+      const newMessage = {
+        sender: this.props.name,
+        sentTime: new Date().getTime(),
+        message: this.state.newMessage
+      }
+
+      this.setState({ newMessage: '' })
+
+      const newKey = this.ref.push().key
+      this.ref.child(newKey).set(newMessage)
+    }
   }
 
   handleTextChange(e) {

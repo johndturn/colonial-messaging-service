@@ -9,3 +9,9 @@
   align-items: center;
   padding: 10px;
 }
+
+.error {
+  color: red;
+  text-align: center;
+  margin: 0;
+}

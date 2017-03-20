@@ -1,5 +1,51 @@
 {
-    "Messages": {
-
+    "Message": {
+        "TestMessage1": {
+            "sender": "John Turner",
+            "message": "This is just a test message!",
+            "sentTime": 1489859548625
+        }
+    },
+    "User": {
+        "bjXiKW0tNmgDZsHgine89hnJ8pF2": {
+            "name": "John Turner",
+            "email": "john@johnturnertech.com",
+            "uid": "bjXiKW0tNmgDZsHgine89hnJ8pF2"
+        },
+        "VhrcgGJ7lwc6swInsyWUbZ3HxxZ2": {
+            "name": "Gove Allen",
+            "email": "gove.allen@gmail.com",
+            "uid": "VhrcgGJ7lwc6swInsyWUbZ3HxxZ2"
+        },
+        "G3Mf35x9GPYwlv4H8vUUFxb1RDI2": {
+            "name": "Greg Anderson",
+            "email": "greg.anderson@bitbybittech.com",
+            "uid": "G3Mf35x9GPYwlv4H8vUUFxb1RDI2"
+        },
+        "egVW6CYVk4VjVzYcpAztoA9bt182": {
+            "name": "Stephen Liddle",
+            "email": "stephen.liddle@codingfrenzy.com",
+            "uid": "egVW6CYVk4VjVzYcpAztoA9bt182"
+        },
+        "t4SndEBSj0UTBSZi4Ikre5rYDGE3": {
+            "name": "Bonnie Anderson",
+            "email": "bonnie.anderson@womeninbusiness.com",
+            "uid": "t4SndEBSj0UTBSZi4Ikre5rYDGE3"
+        },
+        "key6KaxFTWX2ygRFqV2iaDTyuKx2": {
+            "name": "Conan Albrecht",
+            "email": "conan@myeducator.com",
+            "uid": "key6KaxFTWX2ygRFqV2iaDTyuKx2"
+        },
+        "PiaHPqMFpuSfpiYEVk8o9NFs6b42": {
+            "name": "Tom Meservy",
+            "email": "tom.meservy@windows-server.com",
+            "uid": "PiaHPqMFpuSfpiYEVk8o9NFs6b42"
+        },
+        "lWqFXeKgXUPtHIJZMJxwlCLVKgd2": {
+            "name": "Rick Moranis",
+            "email": "rick.moranis@spaceballs.com",
+            "uid": "lWqFXeKgXUPtHIJZMJxwlCLVKgd2"
+        }
     }
 }

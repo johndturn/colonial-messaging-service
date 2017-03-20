@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 import React, { Component } from 'react'
 
 import TopBar from '../TopBar/TopBar'
@@ -13,33 +14,41 @@ class MainPage extends Component {
     super()
 
     this.state = {
-      name: ''
+      user: {
+        'name': '',
+        'email': '',
+        'uid': ''
+      }
     }
 
-    this.setName = this.setName.bind(this)
+    this.setUser = this.setUser.bind(this)
     this.renderLogin = this.renderLogin.bind(this)
     this.renderApplication = this.renderApplication.bind(this)
   }
 
-  setName(name) {
+  componentWillUnmount() {
+    firebase.auth().signOut()
+  }
+
+  setUser(user) {
     this.setState({
-      name
+      user
     })
   }
 
   renderApplication() {
     return (
       <div className="MainPage-authenticated-content">
-        <InfoCard name={this.state.name} />
+        <InfoCard name={this.state.user.name} />
         <MessageBox />
-        <InputCard name={this.state.name} />
+        <InputCard name={this.state.user.name} />
       </div>
     )
   }
 
   renderLogin() {
     return (
-      <LoginCard setName={this.setName} />
+      <LoginCard setUser={this.setUser} />
     )
   }
 
@@ -48,7 +57,7 @@ class MainPage extends Component {
       <div className="MainPage">
         <TopBar />
         <div className="MainPage-main-content">
-          { this.state.name ? this.renderApplication() : this.renderLogin() }
+          { this.state.user.name ? this.renderApplication() : this.renderLogin() }
         </div>
       </div>
     )
