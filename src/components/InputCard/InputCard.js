@@ -17,7 +17,6 @@ class InputCard extends Component {
     }
 
     this.ref = firebase.database().ref().child('Message')
-
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
   }

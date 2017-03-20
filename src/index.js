@@ -11,11 +11,11 @@ import './styles/index.css'
 
 // Initialize Firebase:
 const config = {
-  apiKey: "AIzaSyAsR4_-HsBPLml6GBzj_H2mMfB0V04P8Qs",
-  authDomain: "colonial-messaging-service.firebaseapp.com",
-  databaseURL: "https://colonial-messaging-service.firebaseio.com",
-  storageBucket: "colonial-messaging-service.appspot.com",
-  messagingSenderId: "213705155859"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
 }
 
 firebase.initializeApp(config)
